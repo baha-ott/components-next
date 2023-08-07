@@ -7,7 +7,7 @@ function NavBar() {
     { path: "/works", title: "Works" },
     { path: "contact", title: "Contact us" },
   ].map(({ path, title }) => (
-    <li>
+    <li key={title}>
       <Link href={path} className="text-lg">
         {title}
       </Link>
@@ -15,13 +15,17 @@ function NavBar() {
   ));
 
   return (
-    <nav className="flex justify-between h-32
-     items-center px-16">
+    <nav
+      className="flex justify-between h-32
+     items-center px-16"
+    >
       <div className="text-3xl font-bold">Tritech</div>
       <ul className="flex items-center gap-16">{navItems}</ul>
 
       <div className="flex gap-8">
-        <button className="text-lg border-2 px-8 py-2 rounded-full border-white">Let's Talk!</button>
+        <button className="text-lg border-2 px-8 py-2 rounded-full border-white">
+          Let&apos;s Talk!
+        </button>
         <button className="text-lg">menu</button>
       </div>
     </nav>
